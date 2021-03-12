@@ -48,12 +48,14 @@ func (v_origin *Vector2d) GetAngleTo(v *Vector2d) float64 {
 func (v_origin *Vector2d) GetUnitVector() *Vector2d {
 	if v_origin.IsZeroLength() {
 		return nil
-	} else {
-		return &Vector2d{X: v_origin.X / v_origin.Length, Y: v_origin.Y / v_origin.Length}
 	}
 
-func (v_origin *Vector2d) GetUnitVector(tolerlance *Torlerance) *Vector2d{
-	return nil;
+	var x = v_origin.X / v_origin.Length
+	var y = v_origin.Y / v_origin.Length
+
+	return NewVector2d(x, y)
 }
 
+func (v_origin *Vector2d) GetUnitVectorT(tolerlance *Tolerance) *Vector2d {
+	return nil
 }
